@@ -76,7 +76,6 @@ nav > a.active {
 #new-form input[type="submit"] {
   grid-column: span 2;
   width: 10rem;
-  margin-left: auto;
 }
 
 table {
