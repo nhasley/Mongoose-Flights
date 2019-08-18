@@ -1,6 +1,13 @@
 <%- include('../partials/header') %>
 <h2>Flight Itinerary</h2>
 <form id="new-form" action="/flights" method="POST">
+  <label>Airports
+    <select name="airports">
+      <option value="AUS">AUS</option>
+      <option value="DAL">DAL</option>
+      <option value="LAX">LAX</option>
+      <option value="SEA">SEA</option>
+    </select> </label><br />
   <label>Airlines
     <select name="airlines">
       <option value="American">American</option>
@@ -9,13 +16,6 @@
     </select> </label><br />
   <label>Departure: <input type="date" name="departs" /> </label><br />
   <label>Flight No.: <input type="number" name="flightNo" /> </label><br />
-  <label>Airports
-    <select name="airports">
-      <option value="AUS">AUS</option>
-      <option value="DAL">DAL</option>
-      <option value="LAX">LAX</option>
-      <option value="SEA">SEA</option>
-    </select> </label><br />
   <input type="submit" value="Add Flight" />
 </form>
 </body>
