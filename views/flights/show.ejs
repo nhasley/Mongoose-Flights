@@ -1,0 +1,94 @@
+<%- include('../partials/header') %>
+<h1>Flight Details</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Airport</th>
+      <th>Airline</th>
+      <th>Flight Number</th>
+      <th>Departs</th>
+      <span> </span>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= flight.airport %></td>
+      <td><%= flight.airline %></td>
+      <td><%= flight.flightNo %></td>
+      <td><%= flight.departs %></td>
+    </tr>
+  </tbody>
+</table>
+<form action="/flights/<%= flight._id%>/destinations" method="POST">
+  <table>
+    <thead>
+      <tr>
+        <th>
+          <h4>Destination</h4>
+        </th>
+        <th>
+          <h4>Arrival</h4>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <select name="airport">
+            <option value="AUS">AUS</option>
+            <option value="DAL">DAL</option>
+            <option value="LAX">LAX</option>
+            <option value="SEA">SEA</option>
+          </select>
+        </td>
+        <td>
+          <input type="date" name="arrival" />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <td>
+    <input type="submit" value="Save Destination" />
+  </td>
+</form>
+<tbody>
+  <th>
+    <h4>Destination/Arrival</h4>
+  </th>
+  <ul>
+    <% flight.destinations.forEach(function(f) { %>
+    <li>
+      <td><%= f.airport %></td>
+      <td><%= f.arrival %></td>
+    </li>
+    <% }); %>
+  </ul>
+</tbody>
+<h1>Tickets</h1>
+<form action="/flights/<%= flight._id %>/tickets" method="POST">
+  <label>Seats:
+    <input name="seat" pattern="[A-F][1-9]\d?" /> </label><br />
+  <label>Flight Number:
+    <input type="number" name="flight" /> </label><br />
+  <label>Price:
+    <input type="number" name="price" /> </label><br />
+  <input type="submit" value="Get Tickets" />
+</form>
+<tbody>
+  <th>
+    <h4>Seat/Price</h4>
+  </th>
+  <ul>
+    <% if (tickets.length) { %> <% tickets.forEach(function(t) { %>
+    <li>
+      <td><%= t.seat %></td>
+      <td><%= t.price %></td>
+    </li>
+    <% }); %> <% } else { %>
+    <h5>No Tickets for This Flight Yet</h5>
+    <% } %>
+  </ul>
+</tbody>
+</body>
+
+</html>

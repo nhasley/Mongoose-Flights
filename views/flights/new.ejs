@@ -1,17 +1,23 @@
 <%- include('../partials/header') %>
-    <form action="/flights" method="POST">
-      <label
-        >Airline:
-        <select name="airline">
-          <option value="American">American</option>
-          <option value="Southwest">Southwest</option>
-          <option value="United">United</option>
-        </select> </label
-      ><br />
-      <label>Flight Number: <input type="text" name="flightNo" /> </label><br />
-      <label>Departs: <input type="text" name="departs" /> </label><br />
+<h2>Flight Itinerary</h2>
+<form action="/flights" method="POST">
+  <label>Airlines
+    <select name="airlines">
+      <option value="American">American</option>
+      <option value="Southwest">Southwest</option>
+      <option value="United">United</option>
+    </select> </label><br />
+  <label>Departure: <input type="date" name="departs" /> </label><br />
+  <label>Flight No.: <input type="number" name="flightNo" /> </label><br />
+  <label>Airports
+    <select name="airports">
+      <option value="AUS">AUS</option>
+      <option value="DAL">DAL</option>
+      <option value="LAX">LAX</option>
+      <option value="SEA">SEA</option>
+    </select> </label><br />
+  <input type="submit" value="Add Flight" />
+</form>
+</body>
 
-      <input type="submit" value="Add Flight" />
-    </form>
-  </body>
 </html>

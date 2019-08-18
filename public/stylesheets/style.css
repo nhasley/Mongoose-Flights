@@ -1,7 +1,7 @@
 * {
   box-sizing: border-box;
   font-family: Helvetica;
-  color: #424748;
+  color: black;
 }
 
 body {
@@ -66,7 +66,8 @@ nav > a.active {
 }
 
 #new-form *,
-#add-review-form * {
+#add-review-form *,
+#add-performer-form * {
   font-size: 20px;
   padding: 5px;
   border-radius: 5px;
@@ -80,7 +81,6 @@ nav > a.active {
 
 table {
   font-size: 20px;
-  width: 100%;
 }
 
 table thead th {
@@ -88,24 +88,58 @@ table thead th {
   border-bottom: 2px solid #424748;
 }
 
-th,
-td {
-  border-bottom: 1px solid #ddd;
-}
-
-tr:hover {
-  background-color: #f5f5f5;
-}
-
 table td {
   padding: 10px;
+  text-align: center;
 }
 
-tbody {
-  display: block;
-  overflow: auto;
+#list td:nth-child(2),
+#list td:nth-child(3) {
+  min-width: 100px;
 }
 
-thead {
-  display: block;
+#list a {
+  border-radius: 4px;
+  background-color: #b8c0c2;
+  padding: 4px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+#list a:hover {
+  background-color: white;
+}
+
+#show-page {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 1rem;
+}
+
+#show-page div:nth-child(even) {
+  font-weight: bold;
+}
+
+#add-review-form,
+#add-performer-form {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+#add-review-form input[type="submit"],
+#add-performer-form input[type="submit"] {
+  width: 10rem;
+  grid-column: 2 / 3;
+}
+
+ul {
+  margin: 0 0 1rem;
+  padding: 0;
+  list-style: none;
+}
+
+li {
+  font-weight: bold;
 }
